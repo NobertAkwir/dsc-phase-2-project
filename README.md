@@ -1,66 +1,31 @@
 # Phase 2 Project
 
-Another module down--you're almost half way there!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
-
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+Author: Nobert Akwir
 
 ## Project Overview
 
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
+This project seeks to provide a predictive model, based on King County House Sales dataset, for a real estate agency that helps homeowners(future ones to) buy and/or sell homes. We will also be looking at the relationship between the different attributes in our sales dataset and the selling price itself as the dependent variable.
 
 ### The Data
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
-
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
-
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
+This project uses the King County House Sales dataset, which can be found in kc_house_data.csv in the data folder in this repo. The description of the column names can be found in column_names.md in the same folder. As with most real world data sets, the column names are not perfectly described, so we'll have to do some research or use our best judgment if we have questions about what the data means.
 
 ### Business Problem
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+The project is going to be to develop a pricing algorithm to help set a target price for houses that are to be bought and/or sold by homeowners through the real estate agency. The goal is to save the real estate agency and prospective/current homeowners some time and to help ensure consistency in pricing of houses in the area.
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+## Results
 
-## Deliverables
+**1. Our Y-intercept, indicates that the base price for a house in King county, with all other dependent attributes at 0, should be 6765900.901904495.**  
 
-There are three deliverables for this project:
+**2. For every unit increase in bathrooms, sqft_living, floors, condition and grade, the price of the houses increase by 50109.359950, 182.028980, 20835.586811, 18406.181028, 128614.320549 respectively.**  
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+**3. Having a waterfront at the house, increases the price of the house by 697976.729420, which shows this is the most expensive aspect of the houses.**  
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+**4. For every unit increase in bedrooms, footage of the lot(sqft_lot) an year_built, the price of the houses decrease by 42144.849922, 0.257080, 3879.881453 respectively**
 
-### Key Points
+## Conclusion
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
-
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
-
-## Getting Started
-
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
-
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
-
-## Project Submission and Review
-
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+Basically, from our little eperiment, we shouldnt really rely on our final model as the final say in pricing the house as we have seen we are violating most of the assumptions of linear regression. This was also seen from our Mean Squared Error value earlier. Therefore, our model should be purposed for predictive purposes only.
+We should also work on looking on the outliers in our variable since they are really affecting our model. Though purposely leaving them on since in the real world, this are truly the prices of the houses, but it seems that handling them in a better way may definitely lead to better model.
